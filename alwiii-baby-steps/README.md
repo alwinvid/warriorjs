@@ -2,21 +2,22 @@
 
 ### _For players new to WarriorJS_
 
-## Level 3
+## Level 4
 
-_The air feels thicker than before. There must be a horde of sludge._
+_You can hear bow strings being stretched._
 
-> **TIP:** Be careful not to die! Use `warrior.health()` and `warrior.maxHealth()` to keep an eye on your health, and `warrior.rest()` to earn 10% of your max health back.
+> **TIP:** No new abilities this time, but you must be careful not to rest while taking damage. Save a `this.health` variable and compare it on each turn to see if you're taking damage.
 
 ### Floor Map
 
 ```
-╔═════════╗
-║@ s ss s>║
-╚═════════╝
+╔═══════╗
+║@ Sa S>║
+╚═══════╝
 
 @ = Alwiii (20 HP)
-s = Sludge (12 HP)
+S = Thick Sludge (24 HP)
+a = Archer (7 HP)
 > = stairs
 ```
 
