@@ -10,7 +10,6 @@ class Player {
           warrior.walk();
         } else warrior.rest();
       } else warrior.walk();
-      // this.health = warrior.health();
     } else if (!warrior.feel().isEmpty()) {
       warrior.attack();
     }
