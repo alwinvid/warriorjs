@@ -11,7 +11,8 @@ class Player {
         } else warrior.rest();
       } else warrior.walk();
     } else if (!warrior.feel().isEmpty()) {
-      warrior.attack();
+      if (warrior.feel().getUnit().isEnemy()) warrior.attack();
+      else if (warrior.feel().getUnit().isBound()) warrior.rescue();
     }
     this.health = warrior.health();
   }
