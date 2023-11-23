@@ -2,23 +2,22 @@
 
 ### _For players new to WarriorJS_
 
-## Level 6
+## Level 7
 
-_The wall behind you feels a bit further away in this room. And you hear more cries for help._
+_You feel a wall right in front of you and an opening behind you._
 
-> **TIP:** You can walk backward by passing `'backward'` as an argument to `walk()`. Same goes for `feel()`, `rescue()` and `attack()`. Archers have a limited attack distance.
+> **TIP:** You're not as effective at attacking backward. Use `warrior.feel().isWall()` and `warrior.pivot()` to turn around.
 
 ### Floor Map
 
 ```
-╔════════╗
-║C @ S aa║
-╚════════╝
+╔══════╗
+║>a S @║
+╚══════╝
 
-C = Captive (1 HP)
-@ = Alwiii (20 HP)
-S = Thick Sludge (24 HP)
 a = Archer (7 HP)
+S = Thick Sludge (24 HP)
+@ = Alwiii (20 HP)
 > = stairs
 ```
 
@@ -30,6 +29,7 @@ a = Archer (7 HP)
 - `warrior.attack()`: Attacks a unit in the given direction (`'forward'` by default), dealing 5 HP of damage.
 - `warrior.rest()`: Gains 10% of max health back, but does nothing more.
 - `warrior.rescue()`: Releases a unit from his chains in the given direction (`'forward'` by default).
+- `warrior.pivot()`: Rotates in the given direction (`'backward'` by default).
 
 ### Senses
 
