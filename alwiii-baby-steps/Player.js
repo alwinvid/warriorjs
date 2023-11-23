@@ -16,7 +16,18 @@ class Player {
   }
 
   handleEmptySpace(warrior) {
-    if (warrior.health() < 20) {
+    const look = warrior.look();
+
+    if (look[1]?.getUnit()?.isEnemy()) {
+      warrior.think("There's an enemy in range i can take him down");
+      warrior.shoot();
+    } else if (look[2]?.getUnit()?.isEnemy()) {
+      warrior.think("There's an enemy in range i can take him down");
+      if (!look[1]?.isEmpty()) {
+        warrior.think("but i might hurt a captive");
+        warrior.walk();
+      } else warrior.shoot();
+    } else if (warrior.health() < 20) {
       this.handleLowHealth(warrior);
     } else {
       warrior.walk(this.direction);
