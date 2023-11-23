@@ -17,8 +17,10 @@ class Player {
 
   handleEmptySpace(warrior) {
     const look = warrior.look();
-
-    if (look[1]?.getUnit()?.isEnemy()) {
+    if (warrior.look("backward")[2]?.getUnit()?.isEnemy()) {
+      warrior.think("bloody hell There's an enemy behind me");
+      warrior.pivot();
+    } else if (look[1]?.getUnit()?.isEnemy()) {
       warrior.think("There's an enemy in range i can take him down");
       warrior.shoot();
     } else if (look[2]?.getUnit()?.isEnemy()) {
