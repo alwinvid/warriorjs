@@ -25,8 +25,10 @@ class Player {
   handleLowHealth(warrior) {
     if (warrior.health() < this.health) {
       warrior.think("Oh no, I am losing health");
-      if (warrior.health() > 10) warrior.walk();
-      else warrior.walk("backward");
+      if (warrior.health() > 10) {
+        warrior.think("but i can still keep going");
+        warrior.walk();
+      } else warrior.walk("backward");
     } else {
       warrior.rest();
     }
@@ -35,7 +37,8 @@ class Player {
     const space = warrior.feel(this.direction);
 
     if (space.isWall()) {
-      this.direction = "forward";
+      warrior.think("who put this wall here?");
+      warrior.pivot();
     } else if (space.getUnit().isEnemy()) {
       warrior.attack();
     } else if (space.getUnit().isBound()) {
